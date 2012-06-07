@@ -1,0 +1,20 @@
+BeamerCloud
+===============
+
+Este tema para Beamer   (http://latex-beamer.sourceforge.net/) es una 
+obra derivada de Torino, un tema creado por Marco Barisione:
+
+http://blog.barisione.org/2007-09/torino-a-pretty-theme-for-latex-beamer/
+
+Para instalar el tema escribe en un terminal:
+
+$ mkdir -p ~/texmf/tex/latex/beamer
+$ cp *.sty ~/texmf/tex/latex/beamer
+
+Tu fichero *.tex debe comenzar así:
+
+\documentclass{beamer}
+\include{cabecera}
+
+
+
