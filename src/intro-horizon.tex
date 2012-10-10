@@ -5,11 +5,11 @@
 \author{IES Gonzalo Nazareno\\
 IES Los Albares\\
 IES La Campiña\\
-IES Ingeniero de la Cierva}
-\title{Introducción a Horizon}
-\institute{Proyecto de Innovación\\ {\color{white} .\\} \emph{Implantación y
-    puesta a punto de la infraestructura de un cloud computing privado para el
-    despliegue de servicios en la nube}} 
+IES Ingeniero de la Cierva\\
+\vspace{.5cm}
+\includegraphics[width=0.2\textwidth]{cc_by_sa.png}}
+\title{Introducción a OpenStack Horizon}
+\institute{Proyecto de Innovación\\ {\color{white} .\\} \emph{Implantación y puesta a punto de la infraestructura de un cloud computing privado para el despliegue de servicios en la nube}} 
 
 
 \begin{document}
@@ -24,10 +24,10 @@ IES Ingeniero de la Cierva}
   \item Es una aplicación web desarrollada en Django
   \item Implementa las funcionalidades básicas de los componentes principales de
     OpenStack: Nova, Glance, Swift, etc. 
-  \item Permite utilizar fácilmente OpenStack mediante una interfaz web simple
-  \item Como todos los componentes de OpenStack está sometida a un fuerte
+  \item Ideal para que usuarios noveles utilicen OpenStack
+  \item Como todos los componentes de OpenStack está sometido a un fuerte
     desarrollo, por lo que cambia bastante con cada versión.
-  \item Utilizamos Horizon para OpenStack Essex (2012.1)
+  \item Aquí utilizamos Horizon de OpenStack Essex (2012.1)
   \end{itemize}
 \end{frame}
 
@@ -231,5 +231,25 @@ $ chmod 400 ~/.ssh/clave-prueba.pem
   \begin{center}
     \includegraphics[width=.8\textwidth]{../img/horizon11.png}
   \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Acciones sobre las instancias}
+    \begin{description}
+    \item[Terminar] \textit{Terminate}: Se apaga la instancia y se borra la
+      imagen de disco creada en el nodo de computación. Esta acción no es
+      reversible y se pierden todos los datos que hubiera.
+    \item[Pausar] \textit{Pause}: Se ``congela'' la instancia y se guarda la
+      información de estado en RAM. La instancia no es accesible hasta que se
+      \textit{des-pause} (\textit{unpause}).
+    \item[Suspender] \textit{Suspend}: Se para la instancia y se almacena la
+      información de estado en el disco del nodo de computación, liberando la
+      memoria RAM que estuviera utilizando. Cuando se desee, se reanuda
+      (\textit{resume}) la instancia y vuelve a estar disponible.
+    \item [Instantánea] \textit{Snapshot}: Se hace una instantánea de la
+      instancia y se almacena para utilizar como imagen de base para lanzar otra
+      instancia. La instantánea se puede hacer pública para ponerla a
+      disposición del resto de usuarios.
+    \end{description}
 \end{frame}
 \end{document}
