@@ -12,7 +12,10 @@ IES Ingeniero de la Cierva\\
 \institute{Proyecto de Innovación\\ {\color{white} .\\} \emph{Implantación y
     puesta a punto de la infraestructura de un cloud computing privado para el
     despliegue de servicios en la nube}}  
+
 \begin{document}
+\setlength{\parskip}{.2cm}
+
 \begin{frame}[t,plain]
 \titlepage
 \end{frame}
@@ -86,7 +89,7 @@ IES Ingeniero de la Cierva\\
       \item Contras:
       \begin{itemize}
       \item Entorno más complejo
-      \item Equipos actualizados para los alumnos
+      \item Requiera equipos actualizados para los alumnos
       \end{itemize}
     \end{itemize}
     \column{.4\textwidth}
@@ -101,12 +104,12 @@ IES Ingeniero de la Cierva\\
     \begin{itemize}
     \item Utilización de IaaS
       \begin{itemize}
-      \item Una máquina física por alumno
+      \item Un equipo convencional por alumno
       \item IaaS privado de la organización
       \end{itemize}
       \item Pros:
       \begin{itemize}
-      \item Enorme capacidad computacional
+      \item Enorme variedad de prácticas
       \item Utilización de entornos preconfigurados
       \item Simulación de entornos reales complejos
       \item Equipos básicos para los alumnos
@@ -125,6 +128,20 @@ IES Ingeniero de la Cierva\\
 \end{frame}
 
 \begin{frame}
+  \frametitle{Simulación de entornos reales}
+  Un entorno real es difícil de simular con MVs en un PC por sus
+    propias limitaciones, pero en un IaaS es asumible:
+    \begin{itemize}
+    \item Se puede simular una red con un número importante de equipos
+    \item Se puede utilizar la diversidad que se quiera de SOs
+    \item Este entorno ``real'' pueden utilizarlo conjuntamente todos los
+      alumnos
+    \item Puede estar disponible durante todo el curso sin interferir con otras
+      asignaturas
+    \item Con el tiempo y el uso irán apareciendo conflictos y problemas reales
+    \end{itemize}
+\end{frame}
+\begin{frame}
   \frametitle{Nueva forma de aprendizaje}
   \begin{itemize}
   \item La utilización de IaaS en el ámbito académico conlleva una nueva forma
@@ -139,18 +156,18 @@ IES Ingeniero de la Cierva\\
     \end{itemize}
     \item Un IaaS puede contar con gran cantidad de imágenes preconfiguradas de
       sistemas con muy diversas configuraciones $\Rightarrow$ La forma de
-      aprender no viene condicionada por la necesidad de una configuración previa:
+      aprender no viene condicionada por la necesidad de una configuración
+      previa, por ejemplo:
       \begin{itemize}
-      \item Primero se utiliza el SGBD
+      \item Primero se utiliza el SGBD durante varias clases.
       \item Posteriormente, cuando sea oportuno, se aprende a instalarlo y
         configurarlo
       \end{itemize}
-
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Escenarios (II)}
+  \frametitle{Escenarios (I)}
   \begin{description}
   \item[Instalación y configuración de un servicio]
   \end{description}
@@ -166,6 +183,98 @@ IES Ingeniero de la Cierva\\
     utilizarla como base en posteriores prácticas.
   \item Si algún alumno no ha podido realizar la configuración correctamente
     podrá utilizar la instantánea de un compañero en clases posteriores.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Escenarios (II)}
+  \begin{description}
+  \item[Despliegue de una aplicación web]
+  \end{description}
+  Los pasos típicos a seguir serían:
+  \begin{itemize}
+  \item Se prepara una imagen de un sistema en el que se configura de forma
+    precisa un completo servidor web con todos los módulos necesarios. Se
+    instala y configura un servidor git u otro scm.
+  \item Cada alumno inicia una instancia de la imagen anterior y transfiere la
+    aplicación web desde su equipo.
+  \item Comprueba el funcionamiento en un servidor remoto (la instancia) con
+    similares características que tendría en un servidor remoto real.
+  \item En caso de que tenga que utilizar la instancia durante más de una clase,
+    suspende y reinicia cuando sea necesario.
+  \item En caso de fallos o errores, puede crear una nueva instancia a partir de
+    la imagen inicial o de una instantánea guardada previamente.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Escenario (III)}
+  \begin{description}
+  \item[Utilización de herramientas de sistemas]
+  \end{description}
+  \begin{itemize}
+  \item Se prepara una imagen del sistema que se quiera utilizar, por ejemplo
+    una imagen de un SO con soporte ZFS.
+  \item Cada alumno inicia una instancia de la imagen anterior sin necesidad de
+    saber previamente cómo se instala.
+  \item Se asocian a la instancia varios volúmenes volátiles.
+  \item Se realizan prácticas de ZFS con los volúmenes anteriores.
+  \item Cuando se dominen las herramientas se plantea una instalación del SO
+    sobre ZFS
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Escenarios. Resumen}
+  \begin{itemize}
+  \item Esto no son más que tres ejemplos suficientemente diferentes para ver
+    las enormes posibilidades que se abren.
+  \item En general, pueden plantearse prácticas más complejas, inviables en el
+    esquema tradicional de uso de máquinas virtuales por la complejidad de
+    configurar el escenario inicial y por los problemas que acarrea una
+    equivocación del alumno durante el desarrollo de la práctica.
+  \item Además las prácticas no interfieren con otras asignaturas, parar la
+    práctica y continuar otro día es tan simple como suspender la instancia y
+    reanudarla cuando se precise.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Aprendizaje transversal}
+  \begin{itemize}
+  \item El hecho de utilizar IaaS no como fin en sí mismo sino como herramienta
+    para aprender otros temas provoca que el alumno se familiarice fácilmente
+    con la tecnología.
+  \item Este aprendizaje adquirido de forma continua es mucho más significativo
+    que si se impartiera como un tema en una asignatura.
+  \item En la mayoría de los casos es suficiente con esto, salvo en los
+    estudiantes de Administración de Sistemas, que necesariamente tendrán que
+    profundizar más en la materia.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Administración del Cloud}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Inversión inicial}
+  \begin{itemize}
+  \item Al opta por software libre, la principal inversión son los servidores
+    que formarán el cloud de infraestructura.
+  \item \textbf{Configuración mínima}: 3 servidores (1 gestión del cloud y 2 para
+    ejecución de instancias)
+  \item \textbf{Configuración recomendada}: 2 servidores para gestión (en HA), 1
+    para almacenamiento y 4 o más para ejecución de instancias
+  \item Para la gestión del cloud es suficiente un equipo de características
+    mínimas.
+  \item Para la ejecución de instancias es necesario procesadores potentes y
+    mucha memoria RAM (entre 512 MiB y 2 GiB por instancia) 
+  \item El almacenamiento depende del almacenamiento permanente que sea
+    necesario.
+  \item Sistema fácilmente escalable, se puede empezar por una
+    configuración mínima e ir añadiendo componentes año a año.
   \end{itemize}
 \end{frame}
 \end{document}
