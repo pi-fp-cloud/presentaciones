@@ -8,7 +8,7 @@ IES La Campiña\\
 IES Ingeniero de la Cierva\\
 \vspace{.5cm}
 \includegraphics[width=0.2\textwidth]{cc_by_sa.png}}
-\title{IaaS en educación}
+\title{IaaS en los estudios de informática}
 \institute{Proyecto de Innovación\\ {\color{white} .\\} \emph{Implantación y
     puesta a punto de la infraestructura de un cloud computing privado para el
     despliegue de servicios en la nube}}  
@@ -30,10 +30,11 @@ IES Ingeniero de la Cierva\\
   \item[Platform as a Service (PaaS)] Aplicación completa para el
     desarrollo ofrecida como servicio en la nube (Google App Engine,
     Windows Azure, RedHat OpenShift, \ldots)
-  \item[Infrastructure as a Service] Almacenamiento (también
+  \item[Infrastructure as a Service (IaaS)] Almacenamiento (también
     denominado \textit{Storage as a Service}) y capacidades de cómputo
     (máquinas completas) ofrecida como servicio en la nube.
   \end{description}
+Aquí nos centraremos en la utilización de IaaS en las enseñanzas de informática
 \end{frame}
 
 \begin{frame}
@@ -52,6 +53,7 @@ IES Ingeniero de la Cierva\\
 
 \begin{frame}
   \frametitle{Software para IaaS}
+  Hay bastantes opciones, quizás las más relevantes sean:
   \begin{description}
   \item[Privativo]
   \end{description}
@@ -78,31 +80,34 @@ IES Ingeniero de la Cierva\\
 \end{frame}
 
 \begin{frame}
-  \frametitle{IaaS privado con software libre}
-  La mejor opción para utilizar en un entorno educativo es un IaaS
-  privado basado en software libre
+  \frametitle{Cloud de infraestructura privado con software libre}
+  La mejor opción para utilizar en un entorno educativo es un cloud de
+  infraestructura basado en software libre
   \begin{description}
   \item[¿Por qué privado?] Permite control total sobre el cloud,
-    permitiendo utilizarlo sin límites y conocerlo de forma detallada.
+    utilizarlo sin límites y conocerlo de forma detallada.
   \item[¿Por qué libre?] Entre otros motivos:
     \begin{itemize}
     \item Permite control total sobre software
-    \item Independencia tecnológica
-    \item Utilización de estándares
+    \item Garantiza la independencia tecnológica
+    \item Utiliza  de estándares
     \item Interoperabilidad
     \item Ahorro de costes
     \end{itemize}
   \end{description}
-Quizás sea OpenStack la opción más interesante actualmente para
-implementar IaaS en una organización y en particular en un entorno
-educativo.
+Las dos opciones más interesantes actualmente son OpenStack y OpenNebula
 \end{frame}
 
 \begin{frame}
   \frametitle{Evolución metodológica}
+  Antes de ver las posibilidades que ofrece la utilización de IaaS en las
+  enseñanzas de informática, vamos a recapitular las fases por las que han
+  pasado estas enseñanzas\footnote{Nos referimos siempre a enseñanzas prácticas,
+  no a la tiza ;)}
   \begin{itemize}
   \item A la par de la evolución tecnológica, se ha producido una evolución en
-    los métodos de enseñanza, que podríamos separar en 3 fases:
+    los métodos de enseñanza de informática, que podríamos de forma muy general
+    separar en 3 fases:
     \begin{itemize}
     \item Primera fase: Utilización de equipos físicos
     \item Segunda fase: Utilización de máquinas virtuales
@@ -163,7 +168,7 @@ educativo.
       \item Contras:
       \begin{itemize}
       \item Entorno más complejo
-      \item Requiera equipos actualizados para los alumnos
+      \item Requiere equipos actualizados para los alumnos
       \end{itemize}
     \end{itemize}
     \column{.4\textwidth}
@@ -204,7 +209,7 @@ educativo.
 \begin{frame}
   \frametitle{Simulación de entornos reales}
   Un entorno real es difícil de simular con MVs en un PC por sus
-    propias limitaciones, pero en un IaaS es asumible:
+    propias limitaciones, pero en un cloud es asumible:
     \begin{itemize}
     \item Se puede simular una red con un número importante de equipos
     \item Se puede utilizar la diversidad que se quiera de SOs
@@ -228,7 +233,7 @@ educativo.
       todo el servidor de aplicaciones
     \item Para hacer prácticas de ZFS había que instalar Solaris o FreeBSD
     \end{itemize}
-    \item Un IaaS puede contar con gran cantidad de imágenes preconfiguradas de
+    \item Un cloud puede contar con gran cantidad de imágenes preconfiguradas de
       sistemas con muy diversas configuraciones $\Rightarrow$ La forma de
       aprender no viene condicionada por la necesidad de una configuración
       previa, por ejemplo:
@@ -333,7 +338,7 @@ educativo.
   \item La administración de los sistemas y en particular del cloud de
     una organización no siempre se valora adecuadamente.
   \item La instalación, configuración y administración del cloud es
-    una tarea compleja $Rightarrow$ exige personal cualificado y con
+    una tarea compleja $\Rightarrow$ exige personal cualificado y con
     suficiente dedicación. 
   \item El cloud privado se convierte en el elemento fundamental para
     el desarrollo de prácticas, esto puede suponer un inconveniente en
@@ -355,10 +360,28 @@ educativo.
     mínimas.
   \item Para la ejecución de instancias es necesario procesadores potentes y
     mucha memoria RAM (entre 512 MiB y 2 GiB por instancia) 
-  \item El almacenamiento depende del almacenamiento permanente que sea
-    necesario.
+  \item El almacenamiento depende del número de imágenes, instantáneas y
+    volúmenes que sea necesario guardar.
   \item Sistema fácilmente escalable, se puede empezar por una
     configuración mínima e ir añadiendo componentes año a año.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Conclusiones}
+  \begin{itemize}
+  \item Es necesario incluir Cloud computing en los currículos
+  \item No sólo es importante conocer el Cloud, sino que utilizarlo
+    habitualmente en clase permite adquirir unas destrezas significativas en su
+    manejo
+  \item Todas las capas de Cloud son interesantes, pero la que ofrece mayores
+    opciones es IaaS
+  \item Una organización que implante un cloud de infraestructura propiciará que
+    sus alumnos hagan prácticas muy interesantes, difícilmente realizables en
+    otros entornos
+  \item En el caso de alumnos de sistemas, disponer de un cloud de
+    infraestructura, permite conocer con detalle y en profundidad una tecnología
+    para la que se prevé una importante demanda futura
   \end{itemize}
 \end{frame}
 \end{document}
