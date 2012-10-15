@@ -22,6 +22,80 @@ IES Ingeniero de la Cierva\\
 
 \begin{frame}
   \frametitle{Cloud Computing}
+  Tradicionalmente se definen tres capas:
+  \begin{description}
+  \item[Software as a Service (SaaS)] Aplicación completa ofrecida
+    como servicio en la nube (Servicios de Google, Salesforce.com, Microsoft
+    Office 365, \ldots)
+  \item[Platform as a Service (PaaS)] Aplicación completa para el
+    desarrollo ofrecida como servicio en la nube (Google App Engine,
+    Windows Azure, RedHat OpenShift, \ldots)
+  \item[Infrastructure as a Service] Almacenamiento (también
+    denominado \textit{Storage as a Service}) y capacidades de cómputo
+    (máquinas completas) ofrecida como servicio en la nube.
+  \end{description}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Tipos de IaaS}
+  \begin{description}
+  \item[Público] Una empresa ofrece IaaS a terceros, encargándose de
+    toda la gestión del Cloud. El caso más conocido es Amazon Elastic
+    Cloud Computing (EC2).
+  \item[Privado] Una empresa configura sus propios recursos como IaaS
+    para tener más flexibilidad y control total sobre sus recursos.
+  \item[Híbrido] Algunos servicios se gestionan en el cloud privado y
+    otros se transfieren a uno público, normalmente utilizan una API
+    común que permita una buena integración.
+  \end{description}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Software para IaaS}
+  \begin{description}
+  \item[Privativo]
+  \end{description}
+  \begin{center}
+    \includegraphics[height=1cm]{../img/vcloud.png}
+  \end{center}
+  \begin{description}
+  \item[Libre]
+  \end{description}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{center}
+      \includegraphics[height=1.5cm]{../img/eucalyptus.png}\\
+      \vspace{.5cm}
+      \includegraphics[height=.75cm]{../img/opennebula.png}
+    \end{center}
+    \column{.5\textwidth}
+    \begin{center}
+      \includegraphics[height=1.5cm]{../img/openstack.jpg}\\
+      \vspace{.5cm}
+      \includegraphics[height=1cm]{../img/cloudstack.png}      
+    \end{center}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{IaaS privado con software libre}
+  La mejor opción para utilizar en un entorno educativo es un IaaS
+  privado basado en software libre
+  \begin{description}
+  \item[¿Por qué privado?] Permite control total sobre el cloud,
+    permitiendo utilizarlo sin límites y conocerlo de forma detallada.
+  \item[¿Por qué libre?] Entre otros motivos:
+    \begin{itemize}
+    \item Permite control total sobre software
+    \item Independencia tecnológica
+    \item Utilización de estándares
+    \item Interoperabilidad
+    \item Ahorro de costes
+    \end{itemize}
+  \end{description}
+Quizás sea OpenStack la opción más interesante actualmente para
+implementar IaaS en una organización y en particular en un entorno
+educativo.
 \end{frame}
 
 \begin{frame}
@@ -255,7 +329,16 @@ IES Ingeniero de la Cierva\\
 
 \begin{frame}
   \frametitle{Administración del Cloud}
-  
+  \begin{itemize}
+  \item La administración de los sistemas y en particular del cloud de
+    una organización no siempre se valora adecuadamente.
+  \item Una infraestructura de cloud es suficientemente compleja para
+    que exija personal cualificado y con suficiente dedicación.
+  \item El cloud privado se convierte en el elemento fundamental para
+    el desarrollo de prácticas, esto puede suponer un inconveniente en
+    caso de errores y hay que planificar alternativas para momentos
+    puntuales.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
