@@ -3,17 +3,21 @@
 \usepackage{color}
 \usepackage{listings}
 
-
-\author{IES Gonzalo Nazareno\\
-IES Los Albares\\
-IES La Campiña\\
-IES Ingeniero de la Cierva\\
+\author{
+\small{IES Gonzalo Nazareno}\\
+\tiny{Dos Hermanas (Sevilla)}\\
+\small{IES Los Albares}\\
+\tiny{Cieza (Murcia)}\\
+\small{IES La Campiña}\\
+\tiny{Arahal (Sevilla)}\\
+\small{IES Ingeniero de la Cierva}\\
+\tiny{Murcia}\\
 \vspace{.5cm}
 \includegraphics[width=0.2\textwidth]{cc_by_sa.png}}
 \title{OpenStack nova client}
 \institute{Proyecto de Innovación\\ {\color{white} .\\} \emph{Implantación y
     puesta a punto de la infraestructura de un cloud computing privado para el
-    despliegue de servicios en la nube}}
+    despliegue de servicios en la nube}}  
 
 \definecolor{gray97}{gray}{.97}
 \definecolor{gray95}{gray}{.95}
@@ -257,9 +261,19 @@ $ nova floating-ip-create
 | 172.22.122.24 | None        | None     | nova |
 +---------------+-------------+----------+------+
 \end{lstlisting}
-Y ahora asociamos esa dirección IP flotante a la instancia:
+Ahora asociamos esa dirección IP flotante a la instancia:
 \begin{lstlisting}[style=consola]
 $ nova add-floating-ip instancia-1 172.22.122.24
+\end{lstlisting}
+Podemos tener ip flotantes asociadas a una instancia y otras libres:
+\begin{lstlisting}[style=consola]
+$ nova floating-ip-list
++---------------+--------------------------------------+----------+------+
+|       Ip      |             Instance Id              | Fixed Ip | Pool |
++---------------+--------------------------------------+----------+------+
+| 172.22.122.25 | None                                 | None     | nova |
+| 172.22.122.24 | a11768e4-817b-4103-a5e6-beb0ee615457 | 10.0.4.5 | nova |
++---------------+--------------------------------------+----------+------+ 
 \end{lstlisting}
 \end{frame}
 
@@ -318,15 +332,31 @@ Todas las acciones se ejecutan como \texttt{nova <accion> <instancia>}
   \begin{description}
   \item[resize] Para modificar en ``vivo'' el sabor de una instancia. Permite
     por ejemplo aumentar la RAM de una instancia mientras está activa.
-  \item[live-migration] Requiere una configuración particular en la que haya un
-    sistema de almacenamiento centralizado de las imágenes de las instancias
-    (del directorio \texttt{/var/lib/nova/instances})
+  \item[live-migration] Para migrar instancias de un nodo de computación a otro
   \item[get-vnc-console] Para obtener una URL para conectarse a una consola
     virtual por VNC
   \item[lock] Para bloquear una instancia
   \item[root-password] Para modificar la contraseña de root de la instancia
   \item[unlock] Para desbloquear una instancia
   \end{description}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{¡Ayuda!}
+  La más importante de todas las acciones:
+  \begin{lstlisting}[style=consola]
+$ nova help
+  \end{lstlisting}
+  O bien para obtener la ayuda de una acción concreta:
+  \begin{lstlisting}[style=consola]
+$ nova help suspend
+usage: nova suspend <server>
+   
+Suspend a server.
+    
+Positional arguments:
+  <server>  Name or ID of server.
+  \end{lstlisting}
 \end{frame}
 \end{document}
 
