@@ -33,7 +33,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2379,14 +2379,14 @@
   <text
      xml:space="preserve"
      style="font-size:311.42224121px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
-     x="2673.3679"
+     x="2629.2703"
      y="11155.579"
      id="text4036"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
        id="tspan4038"
-       x="2673.3679"
-       y="11155.579">nova-volume</tspan></text>
+       x="2629.2703"
+       y="11155.579">nova-console</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:311.42224121px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
@@ -2552,14 +2552,14 @@
   <text
      xml:space="preserve"
      style="font-size:311.42224121px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
-     x="22953.324"
+     x="22387.037"
      y="10352.426"
      id="text4032"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
        id="tspan4034"
-       x="22953.324"
-       y="10352.426">swift</tspan></text>
+       x="22387.037"
+       y="10352.426">nova-volume</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:311.42224121px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
