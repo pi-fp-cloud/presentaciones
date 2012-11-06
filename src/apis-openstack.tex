@@ -2,6 +2,10 @@
 \include{cabecera}
 \usepackage{color}
 \usepackage{listings}
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
 
 \author{
 \small{IES Gonzalo Nazareno}\\
@@ -22,6 +26,20 @@ aboveskip=5pt,
 basicstyle=\tiny\ttfamily,
 belowskip=5pt
 }
+
+\lstset{language=python,
+basicstyle=\tiny\ttfamily,
+keywordstyle=\color{javapurple}\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+%numbers=left,
+%numberstyle=\tiny\color{black},
+%stepnumber=2,
+%numbersep=10pt,
+tabsize=4,
+showspaces=false,
+showstringspaces=false}
 
 \begin{document}
 \begin{frame}[t,plain]
@@ -101,7 +119,7 @@ reply: 'HTTP/1.1 200 OK\r\n'
 
 \begin{frame}[fragile]
   \frametitle{Ejemplo de aplicación propia}
-  \begin{lstlisting}
+  \begin{lstlisting}[language=python]
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
